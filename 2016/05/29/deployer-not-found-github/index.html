@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>My New Post | Hexo</title>
+  <title>搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="原因今天尝试使用hexo搭建github pages，本地调试没什么问题，但是最后部署时报“error deployer not found:github”的错误，到网上原因，发现是hexo的版本升级导致的。
+解决方案步骤一安装依赖的插件
+$ npm install hexo-deployer-git --save
+
+步骤二修改_config.yml，deploy的type由github改为git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="http://yoursite.com/2016/05/29/My-New-Post/index.html">
+<meta property="og:title" content="搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/deployer-not-found-github/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-05-29T07:27:38.216Z">
+<meta property="og:description" content="原因今天尝试使用hexo搭建github pages，本地调试没什么问题，但是最后部署时报“error deployer not found:github”的错误，到网上原因，发现是hexo的版本升级导致的。
+解决方案步骤一安装依赖的插件
+$ npm install hexo-deployer-git --save
+
+步骤二修改_config.yml，deploy的type由github改为git">
+<meta property="og:updated_time" content="2016-05-29T08:14:39.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Post">
-<meta name="twitter:description">
+<meta name="twitter:title" content="搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误">
+<meta name="twitter:description" content="原因今天尝试使用hexo搭建github pages，本地调试没什么问题，但是最后部署时报“error deployer not found:github”的错误，到网上原因，发现是hexo的版本升级导致的。
+解决方案步骤一安装依赖的插件
+$ npm install hexo-deployer-git --save
+
+步骤二修改_config.yml，deploy的type由github改为git">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -54,7 +66,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,10 +75,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-My-New-Post" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-deployer-not-found-github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/29/My-New-Post/" class="article-date">
-  <time datetime="2016-05-29T07:27:38.000Z" itemprop="datePublished">2016-05-29</time>
+    <a href="/2016/05/29/deployer-not-found-github/" class="article-date">
+  <time datetime="2016-05-29T07:46:18.506Z" itemprop="datePublished">2016-05-29</time>
 </a>
     
   </div>
@@ -77,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      My New Post
+      搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误
     </h1>
   
 
@@ -85,11 +97,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>今天尝试使用hexo搭建github pages，本地调试没什么问题，但是最后部署时报“error deployer not found:github”的错误，到网上原因，发现是hexo的版本升级导致的。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h3><p>安装依赖的插件</p>
+<pre><code class="bash">$ npm install hexo-deployer-git --save
+</code></pre>
+<h3 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h3><p>修改_config.yml，deploy的type由github改为git</p>
+<p><a href="https://v2ex.com/t/175940" target="_blank" rel="external">参考</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/29/My-New-Post/" data-id="cios9liro0000isvrpd1vdo6p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/29/deployer-not-found-github/" data-id="ciosbav840000kwvrg0b7n8cp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -123,7 +141,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -133,12 +151,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/05/29/My-New-Post/">My New Post</a>
+            <a href="/2016/05/29/deployer-not-found-github/">搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误</a>
           </li>
         
           <li>
