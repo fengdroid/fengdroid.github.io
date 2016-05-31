@@ -64,6 +64,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-format-code" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/format-code/" class="article-date">
+  <time datetime="2016-05-31T12:23:14.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/format-code/">Windows和Linux环境混合开发之代码格式化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function format()&#123;</span><br><span class="line">for file in ` ls $1`</span><br><span class="line">do</span><br><span class="line">    if [ -d $1&quot;/&quot;$file ]</span><br><span class="line">    then</span><br><span class="line">        format $1&quot;/&quot;$file</span><br><span class="line">    else</span><br><span class="line">        local path=$1&quot;/&quot;$file</span><br><span class="line">        local name=$file</span><br><span class="line"></span><br><span class="line">        if [ &quot;$&#123;file##*.&#125;&quot; = &quot;xml&quot; ] || [ &quot;$&#123;file##*.&#125;&quot; = &quot;java&quot; ] || [ &quot;$&#123;file##*.&#125;&quot; = &quot;MF&quot; ]; then</span><br><span class="line">            echo &quot;formating $1&quot;/&quot;$file&quot;</span><br><span class="line">            sed -i &apos;s/\b\x0D\x0A\b/\n/g&apos; &quot;$1&quot;/&quot;$file&quot;</span><br><span class="line">            sed -i &apos;s/\t/    /g;s/[[:space:]]*$//g&apos; &quot;$1&quot;/&quot;$file&quot;</span><br><span class="line">        fi  </span><br><span class="line">    fi  </span><br><span class="line">done</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">format .</span><br></pre></td></tr></table></figure>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>1、保存上面代码到<code>format.sh</code><br>2、赋执行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x format.sh</span><br></pre></td></tr></table></figure></p>
+<p>3、在需要格式化的代码目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. format.sh</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/31/format-code/" data-id="ciovf2utl0003pwvr2su62qvn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-format-格式化/">Linux format 格式化</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-contentprovide-share-encrypted-data" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/contentprovide-share-encrypted-data/" class="article-date">
+  <time datetime="2016-05-31T12:10:55.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/31/contentprovide-share-encrypted-data/">使用ContentProvider对外提供加密数据查询接口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Android开发中经常需要使用ContentProvider对外提供数据查询接口，而因数据安全考虑，我们的数据库中数据经常都是经过加密存储的，这样，通过方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span><br></pre></td></tr></table></figure></p>
+<p>查询接口返回一个<code>Cursor</code>，没有解密方法是无法获得解密后的数据的，怎么办？简单，返回一个“特殊”的<code>Cursor</code>出去。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h3><p>实现<code>Cursor</code>接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class ContentProviderCursor implements Cursor &#123;</span><br><span class="line">	//实现各种方法，比如getString方法</span><br><span class="line">	@Override</span><br><span class="line">	public String getString(int columnIndex) &#123;</span><br><span class="line">		String str = &quot;&quot;; //把需要解密的数据解密出来并返回</span><br><span class="line">		return str;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h3><p>封装原生<code>Cursor</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public synchronized Cursor rawQuery(String selection, String[] selectionArgs) &#123;</span><br><span class="line">	Cursor cursor = null;</span><br><span class="line">	if (null != dbManager) &#123;</span><br><span class="line">		cursor = dbManager.rawQuery(selection, selectionArgs); // 这里cursor是加密数据的游标</span><br><span class="line">		if (null != cursor) &#123;</span><br><span class="line">			// 封装原生Cursor</span><br><span class="line">			cursor = new ContentProviderCursor(cursor, context);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return cursor;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>在<code>ContentProvider</code>对外提供的接口<code>query</code>中调用上面的<code>rawQuery</code>方法返回一个二次封装的<code>Cursor</code>对象，使用该<code>Cursor</code>对象执行<code>getString</code>等方法时，实际是执行了<code>ContentProviderCursor</code>中<code>getString</code>方法。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/31/contentprovide-share-encrypted-data/" data-id="ciovf2usq0000pwvrzsx7rxr5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-安卓开发-ContentProvider-数据共享/">android 安卓开发 ContentProvider 数据共享</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-deployer-not-found-github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/29/deployer-not-found-github/" class="article-date">
@@ -96,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/29/deployer-not-found-github/" data-id="cioscxu0s0000qgvrb6wh69ux" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/29/deployer-not-found-github/" data-id="ciovf2ut50001pwvr4deev0he" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
@@ -137,9 +224,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/29/hexo-deploy-step/" data-id="cioscxu180003qgvr2s3yon2e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/29/hexo-deploy-step/" data-id="ciovf2uu00006pwvr33z4y0kg" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -182,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/29/hello-world/" data-id="cioscxu110001qgvr6nr7a1cg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/29/hello-world/" data-id="ciovf2uu00004pwvrln80eyej" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +293,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-format-格式化/">Linux format 格式化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-安卓开发-ContentProvider-数据共享/">android 安卓开发 ContentProvider 数据共享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
     </div>
   </div>
 
@@ -214,7 +303,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a>
+      <a href="/tags/Linux-format-格式化/" style="font-size: 10px;">Linux format 格式化</a> <a href="/tags/android-安卓开发-ContentProvider-数据共享/" style="font-size: 10px;">android 安卓开发 ContentProvider 数据共享</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a>
     </div>
   </div>
 
@@ -234,6 +323,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/31/format-code/">Windows和Linux环境混合开发之代码格式化</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/31/contentprovide-share-encrypted-data/">使用ContentProvider对外提供加密数据查询接口</a>
+          </li>
         
           <li>
             <a href="/2016/05/29/deployer-not-found-github/">搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误</a>

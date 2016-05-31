@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Windows和Linux环境混合开发之代码格式化 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。
+解决方案12345678910111213">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows和Linux环境混合开发之代码格式化">
+<meta property="og:url" content="http://yoursite.com/2016/05/31/format-code/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="背景虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。
+解决方案12345678910111213">
+<meta property="og:updated_time" content="2016-05-31T12:27:43.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows和Linux环境混合开发之代码格式化">
+<meta name="twitter:description" content="背景虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。
+解决方案12345678910111213">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-format-code" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/31/format-code/" class="article-date">
+  <time datetime="2016-05-31T12:23:14.000Z" itemprop="datePublished">2016-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Windows和Linux环境混合开发之代码格式化
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function format()&#123;</span><br><span class="line">for file in ` ls $1`</span><br><span class="line">do</span><br><span class="line">    if [ -d $1&quot;/&quot;$file ]</span><br><span class="line">    then</span><br><span class="line">        format $1&quot;/&quot;$file</span><br><span class="line">    else</span><br><span class="line">        local path=$1&quot;/&quot;$file</span><br><span class="line">        local name=$file</span><br><span class="line"></span><br><span class="line">        if [ &quot;$&#123;file##*.&#125;&quot; = &quot;xml&quot; ] || [ &quot;$&#123;file##*.&#125;&quot; = &quot;java&quot; ] || [ &quot;$&#123;file##*.&#125;&quot; = &quot;MF&quot; ]; then</span><br><span class="line">            echo &quot;formating $1&quot;/&quot;$file&quot;</span><br><span class="line">            sed -i &apos;s/\b\x0D\x0A\b/\n/g&apos; &quot;$1&quot;/&quot;$file&quot;</span><br><span class="line">            sed -i &apos;s/\t/    /g;s/[[:space:]]*$//g&apos; &quot;$1&quot;/&quot;$file&quot;</span><br><span class="line">        fi  </span><br><span class="line">    fi  </span><br><span class="line">done</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">format .</span><br></pre></td></tr></table></figure>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>1、保存上面代码到<code>format.sh</code><br>2、赋执行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x format.sh</span><br></pre></td></tr></table></figure></p>
+<p>3、在需要格式化的代码目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. format.sh</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/31/format-code/" data-id="ciovf2utl0003pwvr2su62qvn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-format-格式化/">Linux format 格式化</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/31/contentprovide-share-encrypted-data/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用ContentProvider对外提供加密数据查询接口</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-format-格式化/">Linux format 格式化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-安卓开发-ContentProvider-数据共享/">android 安卓开发 ContentProvider 数据共享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-github/">hexo github</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux-format-格式化/" style="font-size: 10px;">Linux format 格式化</a> <a href="/tags/android-安卓开发-ContentProvider-数据共享/" style="font-size: 10px;">android 安卓开发 ContentProvider 数据共享</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hexo-github/" style="font-size: 10px;">hexo github</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/31/format-code/">Windows和Linux环境混合开发之代码格式化</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/31/contentprovide-share-encrypted-data/">使用ContentProvider对外提供加密数据查询接口</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/29/deployer-not-found-github/">搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:github 的错误</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/29/hexo-deploy-step/">使用Hexo部署静态网页的基本命令</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
