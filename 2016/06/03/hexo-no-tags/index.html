@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux,format,格式化," />
+  <meta name="keywords" content="hexo,tags," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配&amp;gt;，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。">
+<meta name="description" content="hexo建立个人静态网页时候，经常出现标签页无内容的情况。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows和Linux环境混合开发之代码格式化">
-<meta property="og:url" content="http://fengdroid.github.io/2016/05/31/format-code/index.html">
+<meta property="og:title" content="解决hexo部署个人网页时候无法正确显示出标签的问题">
+<meta property="og:url" content="http://fengdroid.github.io/2016/06/03/hexo-no-tags/index.html">
 <meta property="og:site_name" content="Fengdroid Home">
-<meta property="og:description" content="虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配&amp;gt;，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。">
-<meta property="og:updated_time" content="2016-06-03T13:44:00.270Z">
+<meta property="og:description" content="hexo建立个人静态网页时候，经常出现标签页无内容的情况。">
+<meta property="og:updated_time" content="2016-06-03T14:00:53.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows和Linux环境混合开发之代码格式化">
-<meta name="twitter:description" content="虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配&amp;gt;，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。">
+<meta name="twitter:title" content="解决hexo部署个人网页时候无法正确显示出标签的问题">
+<meta name="twitter:description" content="hexo建立个人静态网页时候，经常出现标签页无内容的情况。">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> Windows和Linux环境混合开发之代码格式化 | Fengdroid Home </title>
+  <title> 解决hexo部署个人网页时候无法正确显示出标签的问题 | Fengdroid Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +254,7 @@
             
             
               
-                Windows和Linux环境混合开发之代码格式化
+                解决hexo部署个人网页时候无法正确显示出标签的问题
               
             
           </h1>
@@ -266,8 +266,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T20:23:14+08:00" content="2016-05-31">
-              2016-05-31
+            <time itemprop="dateCreated" datetime="2016-06-03T21:39:31+08:00" content="2016-06-03">
+              2016-06-03
             </time>
           </span>
 
@@ -294,12 +294,13 @@
       
 
       
-        <p>虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习<br>惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配&gt;，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。</p>
-<a id="more"></a> 
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>虽然Linux系统作为开发环境有诸多好处，但是因为各种原因，如界面不够绚丽、IDE选择不够多、效率较低等，很多开发还是习惯于在Windows环境开发。但是，如果涉及源码开发，单单指望Windows环境肯定不行了，所以Windows+Linux混合使用成为标配，这也带来了格式不统一的问题如Unix和Windows行末编码不同、tab键和空格键混用等。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function format()&#123;</span><br><span class="line">for file in ` ls $1`</span><br><span class="line">do</span><br><span class="line">    if [ -d $1&quot;/&quot;$file ]</span><br><span class="line">    then</span><br><span class="line">        format $1&quot;/&quot;$file</span><br><span class="line">    else</span><br><span class="line">        local path=$1&quot;/&quot;$file</span><br><span class="line">        local name=$file</span><br><span class="line"></span><br><span class="line">        if [ &quot;$&#123;file##*.&#125;&quot; = &quot;xml&quot; ] || [ &quot;$&#123;file##*.&#125;&quot; = &quot;java&quot; ] || [ &quot;$&#123;file##*.&#125;&quot; = &quot;MF&quot; ]; then</span><br><span class="line">            echo &quot;formating $1&quot;/&quot;$file&quot;</span><br><span class="line">            sed -i &apos;s/\b\x0D\x0A\b/\n/g&apos; &quot;$1&quot;/&quot;$file&quot;</span><br><span class="line">            sed -i &apos;s/\t/    /g;s/[[:space:]]*$//g&apos; &quot;$1&quot;/&quot;$file&quot;</span><br><span class="line">        fi  </span><br><span class="line">    fi  </span><br><span class="line">done</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">format .</span><br></pre></td></tr></table></figure>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>1、保存上面代码到<code>format.sh</code><br>2、赋执行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x format.sh</span><br></pre></td></tr></table></figure></p>
-<p>3、在需要格式化的代码目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. format.sh</span><br></pre></td></tr></table></figure></p>
+        <p>hexo建立个人静态网页时候，经常出现标签页无内容的情况。</p>
+<a id="more"></a>
+<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><p>新建一个页面，命名为 tags 。命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Tagcloud</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>注意：如果有启用多说 或者 Disqus 评论，默认页面也会带有评论。需要关闭的话，请添加字段:comments 并将值设置为 false，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Tagcloud</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><p>在菜单中添加链接。编辑 主题配置文件 ，添加 tags 到 menu 中，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /  </span><br><span class="line">  archives: /archives</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure></p>
+<h2 id="步骤四"><a href="#步骤四" class="headerlink" title="步骤四"></a>步骤四</h2><p>添加多个标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tags: [tag1, tag2, tag3]</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,11 +322,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
           
-            <a href="/tags/format/" rel="tag">#format</a>
-          
-            <a href="/tags/格式化/" rel="tag">#格式化</a>
+            <a href="/tags/tags/" rel="tag">#tags</a>
           
         </div>
       
@@ -334,17 +333,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/contentprovide-share-encrypted-data/" rel="next" title="使用ContentProvider对外提供加密数据查询接口">
-                <i class="fa fa-chevron-left"></i> 使用ContentProvider对外提供加密数据查询接口
+              <a href="/2016/06/03/get-the-packageinfo-of-uninstalled-application/" rel="next" title="使用PackageManager获取已卸载应用的包信息">
+                <i class="fa fa-chevron-left"></i> 使用PackageManager获取已卸载应用的包信息
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/03/get-the-packageinfo-of-uninstalled-application/" rel="prev" title="使用PackageManager获取已卸载应用的包信息">
-                使用PackageManager获取已卸载应用的包信息 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,7 +446,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">3.</span> <span class="nav-text">使用方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤一"><span class="nav-number">1.</span> <span class="nav-text">步骤一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤二"><span class="nav-number">2.</span> <span class="nav-text">步骤二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤三"><span class="nav-number">3.</span> <span class="nav-text">步骤三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤四"><span class="nav-number">4.</span> <span class="nav-text">步骤四</span></a></li></ol></div>
             
           </div>
         </section>
